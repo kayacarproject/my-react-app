@@ -33,7 +33,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-        <h1>Sagar Radadiya Flutter/iOS Developer</h1>
+        <h1>Sagar Radadiya Flutter / iOS Developer</h1>
+        <h1><u>sagarradadiya55@gmail.com</u></h1>
       </header>
       <Posts />
     </div>
