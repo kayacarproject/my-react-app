@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+
+// // function App() {
+// //   return (
+// //     <div className="App">
+// //       <header className="App-header">
+// //         <img src={logo} className="App-logo" alt="logo" />
+// //         {/* <p>
+// //           Edit <code>src/App.tsx</code> and save to reload.
+// //         </p> */}
+// //         <a
+// //           className="App-link"
+// //           href="https://reactjs.org"
+// //           target="_blank"
+// //           rel="noopener noreferrer"
+// //         >
+// //           Learn React
+// //         </a>
+// //       </header>
+// //     </div>
+// //   );
+// // }
+
+// // export default App;
+
+
+// import Posts from "./components/Posts";
 
 // function App() {
 //   return (
 //     <div className="App">
 //       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         {/* <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p> */}
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
+//       <img src={logo} className="App-logo" alt="logo" />
+//         <h1>Sagar Radadiya Flutter / iOS Developer</h1>
+//         <h1><u>sagarradadiya55@gmail.com</u></h1>
 //       </header>
+//       <Posts />
 //     </div>
 //   );
 // }
@@ -26,17 +44,45 @@ import './App.css';
 // export default App;
 
 
-import Posts from "./components/Posts";
+import React, { useEffect, useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import axios from 'axios';
+
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
 function App() {
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    axios
+      .get('http://jsonplaceholder.typicode.com/posts')
+      .then((response) => setPosts(response.data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" />
         <h1>Sagar Radadiya Flutter / iOS Developer</h1>
-        <h1><u>sagarradadiya55@gmail.com</u></h1>
+        <h1>
+          <u>sagarradadiya55@gmail.com</u>
+        </h1>
       </header>
-      <Posts />
+      <ul className="posts">
+        {posts.map((post) => (
+          <li className="post" key={post.id}>
+            <h4>{post.title}</h4>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
