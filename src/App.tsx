@@ -61,7 +61,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://jsonplaceholder.typicode.com/posts')
+      .get('https://jsonplaceholder.typicode.com/posts') // Use HTTPS here
       .then((response) => setPosts(response.data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
@@ -88,3 +88,4 @@ function App() {
 }
 
 export default App;
+
