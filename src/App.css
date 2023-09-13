@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-} */
+} 
 
 
 /* src/App.css */
@@ -43,7 +43,7 @@
 
 /* App.css */
 
-.resume {
+/* .resume {
   font-family: Arial, sans-serif;
   padding: 20px;
   max-width: 800px;
@@ -93,4 +93,4 @@ ul li {
   margin-top: 20px;
   border-top: 1px solid #ddd;
   padding-top: 20px;
-}
+} */
