@@ -40,34 +40,57 @@
 
 /* src/App.css */
 
-.App {
+
+/* App.css */
+
+.resume {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+}
+
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
   text-align: center;
-  margin: 0 auto;
-  max-width: 1000px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  margin: 0;
 }
 
-.App-header {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header h2 {
+  font-weight: normal;
 }
 
-li {
-  list-style-type: none;
+.section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.post {
-  margin-bottom: 4em;
+.section h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-.post h4 {
-  font-size: 2rem;
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+.experience {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
 }
